@@ -79,6 +79,12 @@
     background-color: rgba(0,0,0,0.2);
     border-radius: 3px;
   }
+  #chatInput {
+  pointer-events: auto;
+  position: relative;   /* so it stays on top of any sibling containers */
+  z-index: 999;        /* match or exceed the chat window’s z-index */
+}
+
 </style>
 
 <!-- In <head> (font import & any global styles) -->
@@ -251,7 +257,7 @@
 <div class="h-16"></div>
 
   <!-- Hero CTA with Blurred Gradient Blob -->
-<section class="relative text-center py-24 px-4 overflow-hidden">
+<section class="relative text-center py-24 px-4 overflow-hidden z-0">
   <!-- Gradient “blob” behind the text -->
   <div
     class="absolute top-0 right-0 w-80 h-80 bg-gradient-to-br from-indigo-400 to-purple-500 rounded-full filter blur-3xl opacity-30 -translate-y-16 translate-x-16"
@@ -286,7 +292,7 @@
 <!-- Hero Treatment Section -->
 <section
   id="treatment-hero"
-  class="relative h-[60vh] min-h-[400px] w-full overflow-hidden"
+  class="relative h-[60vh] min-h-[400px] w-full overflow-hidden z-0"
 >
   <!-- Background image (will fade in) -->
   <div
@@ -373,7 +379,7 @@
 
 
   <!-- Section: How It Works -->
-  <section id="how-it-works" class="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-12 items-center">
+  <section id="how-it-works" class="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-12 items-center z-0">
      <!-- Bottom-right gradient blob -->
 <!--  <div-->
 <!--    class="absolute bottom-0 right-0 w-64 h-64 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-full filter blur-3xl opacity-30 translate-y-16 translate-x-16"-->
@@ -417,7 +423,7 @@
 
   <!-- Section: Procedures -->
 <!-- Section: Procedures (with image zoom & “Book Now” button animation) -->
-<section id="procedures" class="relative bg-transparent py-16 px-6 overflow-visible">
+<section id="procedures" class="relative bg-transparent py-16 px-6 overflow-visible z-0">
   <div class="max-w-6xl mx-auto relative z-10">
     <h3 class="text-3xl font-semibold text-center mb-10 text-blue-800">
       Our Top Procedures
@@ -510,6 +516,10 @@
   <!-- Bottom-left gradient blob -->
   <div
     class="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-br from-purple-400 to-blue-500 rounded-full filter blur-3xl opacity-30 translate-y-16 -translate-x-16"
+    aria-hidden="true"
+  ></div>
+  <div
+    class="absolute bottom-0 right-0 w-64 h-64 bg-gradient-to-br from-purple-400 to-blue-500 rounded-full filter blur-3xl opacity-30 translate-y-16 -translate-x-16"
     aria-hidden="true"
   ></div>
 
@@ -657,6 +667,7 @@
     });
   </script>
 
+
 <!-- Floating AI Assistant Icon -->
 <div
   id="ai-agent-button"
@@ -679,7 +690,7 @@
 <!-- Chat Widget -->
  <div
    id="ai-agent-chat"
-   class="fixed bottom-32 right-6 w-96 h-[500px] bg-white border border-gray-200 rounded-2xl shadow-xl z-60 p-6 flex flex-col"
+   class="fixed bottom-32 right-6 w-96 h-[500px] bg-white border border-gray-200 rounded-2xl shadow-xl z-999 p-6 flex flex-col"
  >
   <!-- Header -->
   <div class="flex items-center mb-4">
@@ -834,7 +845,7 @@
     try {
       // Call your webhook
       const res = await fetch(
-        "https://e82a-154-192-134-55.ngrok-free.app/webhook/dental-agent",
+        "https://9d11-154-192-132-18.ngrok-free.app/webhook/dental-agent",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -917,7 +928,7 @@
 
   // Reset memory call (unchanged)
   function resetMemory(email) {
-    fetch("https://e82a-154-192-134-55.ngrok-free.app/webhook/reset-memory", {
+    fetch("https://9d11-154-192-132-18.ngrok-free.app/webhook/reset-memory", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email }),
