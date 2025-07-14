@@ -10,7 +10,7 @@ myenv/
 .idea/
 
 # Other HTML files
-index.html
+assets/index.html
 index1.html
 js_test.html
 LICENSE
