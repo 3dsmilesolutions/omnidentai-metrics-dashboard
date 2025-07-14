@@ -1,0 +1,34 @@
+
+
+# Python files
+__pycache__/
+*.py
+*.pyc
+myenv/
+
+# IDE files
+.idea/
+
+# Other HTML files
+index.html
+index1.html
+js_test.html
+LICENSE
+index2.html
+index3.html
+chart.html
+chart-original.html
+chatbot.html
+ghl_chatbot.html
+improved_chatbot.html
+new_chatbot.html
+
+# Assets and fonts
+assets/
+fonts/
+
+# Other files
+LICENSE
+redis-test.py
+main.py
+EOF
