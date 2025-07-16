@@ -30,7 +30,7 @@
 
         .header {
             text-align: center;
-            margin-bottom: 32px;
+            margin-bottom: 24px;
             background: rgba(30, 41, 59, 0.8);
             padding: 24px 32px;
             border-radius: 16px;
@@ -58,7 +58,7 @@
 
         .refresh-btn {
             position: absolute;
-            top: 36px;
+            top: 24px;
             right: 32px;
             background: rgba(59, 130, 246, 0.2);
             color: #60a5fa;
@@ -76,6 +76,154 @@
             background: rgba(59, 130, 246, 0.3);
             transform: translateY(-1px);
             box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+        }
+
+        .filters-section {
+            background: rgba(30, 41, 59, 0.6);
+            padding: 20px 24px;
+            border-radius: 12px;
+            border: 1px solid rgba(71, 85, 105, 0.3);
+            margin-bottom: 24px;
+            backdrop-filter: blur(10px);
+        }
+
+        .filters-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .filters-title {
+            color: #f1f5f9;
+            font-size: 16px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .filters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            align-items: end;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .filter-label {
+            color: #94a3b8;
+            font-size: 12px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .filter-select, .filter-input {
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(71, 85, 105, 0.4);
+            color: #e2e8f0;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: all 0.2s ease;
+        }
+
+        .filter-select:focus, .filter-input:focus {
+            outline: none;
+            border-color: #60a5fa;
+            box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.2);
+        }
+
+        .filter-input[type="date"] {
+            color-scheme: dark;
+            background: rgba(15, 23, 42, 0.9);
+        }
+
+        .filter-input[type="date"]::-webkit-calendar-picker-indicator {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='white'%3e%3cpath fill-rule='evenodd' d='M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z' clip-rule='evenodd'/%3e%3c/svg%3e");
+            cursor: pointer;
+            width: 20px;
+            height: 20px;
+        }
+
+        .filter-btn {
+            background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+            color: #0f172a;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            height: fit-content;
+        }
+
+        .filter-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(52, 211, 153, 0.3);
+        }
+
+        .clear-filters-btn {
+            background: rgba(239, 68, 68, 0.2);
+            color: #f87171;
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .clear-filters-btn:hover {
+            background: rgba(239, 68, 68, 0.3);
+        }
+
+        .active-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .filter-tag {
+            background: rgba(96, 165, 250, 0.2);
+            color: #60a5fa;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 11px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .filter-tag .remove-filter {
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .filter-tag .remove-filter:hover {
+            color: #f87171;
+        }
+
+        .pinned-charts {
+            margin-bottom: 24px;
+        }
+
+        .pinned-charts-header {
+            color: #f1f5f9;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .metrics-grid {
@@ -156,6 +304,12 @@
             margin-bottom: 32px;
         }
 
+        .pinned-charts .charts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 24px;
+        }
+
         .chart-container {
             background: rgba(30, 41, 59, 0.6);
             padding: 24px;
@@ -163,6 +317,9 @@
             border: 1px solid rgba(71, 85, 105, 0.3);
             backdrop-filter: blur(10px);
             transition: all 0.3s ease;
+            position: relative;
+            width: 100%;
+            height: 400px;
         }
 
         .chart-container:hover {
@@ -183,6 +340,58 @@
         .chart-title::before {
             content: attr(data-icon);
             font-size: 20px;
+        }
+
+        .chart-actions {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            display: flex;
+            gap: 8px;
+            opacity: 0;
+            transition: all 0.2s ease;
+        }
+
+        .chart-container:hover .chart-actions {
+            opacity: 1;
+        }
+
+        .pin-btn {
+            background: rgba(251, 191, 36, 0.2);
+            color: #fbbf24;
+            border: 1px solid rgba(251, 191, 36, 0.3);
+            padding: 6px 8px;
+            border-radius: 6px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .pin-btn:hover {
+            background: rgba(251, 191, 36, 0.3);
+        }
+
+        .pin-btn.pinned {
+            background: rgba(251, 191, 36, 0.8);
+            color: #0f172a;
+        }
+
+        .unpin-btn {
+            background: rgba(239, 68, 68, 0.2);
+            color: #f87171;
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            padding: 6px 8px;
+            border-radius: 6px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .unpin-btn:hover {
+            background: rgba(239, 68, 68, 0.3);
         }
 
         .loading {
@@ -265,7 +474,21 @@
                 margin-top: 16px;
             }
 
+            .filters-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .filters-header {
+                flex-direction: column;
+                gap: 12px;
+                align-items: stretch;
+            }
+
             .charts-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pinned-charts .charts-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -279,6 +502,20 @@
 
             .metric-value {
                 font-size: 28px;
+            }
+
+            .chart-actions {
+                opacity: 1;
+                position: relative;
+                top: auto;
+                right: auto;
+                justify-content: center;
+                margin-top: 12px;
+            }
+
+            .chart-container {
+                width: 100%;
+                max-width: none;
             }
         }
 
@@ -318,7 +555,75 @@
 
         <div id="error" class="error" style="display: none;"></div>
 
+        <div class="filters-section">
+            <div class="filters-header">
+                <div class="filters-title">
+                    📊 Data Filters
+                </div>
+                <button class="clear-filters-btn" onclick="clearAllFilters()">
+                    Clear All
+                </button>
+            </div>
+
+            <div class="filters-grid">
+                <div class="filter-group">
+                    <label class="filter-label">Time Period</label>
+                    <select class="filter-select" id="timePeriodFilter" onchange="applyFilters()">
+                        <option value="7">Last 7 Days</option>
+                        <option value="30" selected>Last 30 Days</option>
+                        <option value="90">Last 3 Months</option>
+                        <option value="365">Last Year</option>
+                        <option value="custom">Custom Range</option>
+                    </select>
+                </div>
+
+                <div class="filter-group" id="startDateGroup" style="display: none;">
+                    <label class="filter-label">Start Date</label>
+                    <input type="date" class="filter-input" id="startDate" onchange="applyFilters()">
+                </div>
+
+                <div class="filter-group" id="endDateGroup" style="display: none;">
+                    <label class="filter-label">End Date</label>
+                    <input type="date" class="filter-input" id="endDate" onchange="applyFilters()">
+                </div>
+
+                <div class="filter-group">
+                    <label class="filter-label">Appointment Status</label>
+                    <select class="filter-select" id="appointmentFilter" onchange="applyFilters()">
+                        <option value="">All</option>
+                        <option value="booked">Booked Only</option>
+                        <option value="not_booked">Not Booked</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label class="filter-label">Patient Type</label>
+                    <select class="filter-select" id="patientTypeFilter" onchange="applyFilters()">
+                        <option value="">All Types</option>
+                        <option value="new">New Patients</option>
+                        <option value="existing">Existing Patients</option>
+                        <option value="returning">Returning Patients</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <button class="filter-btn" onclick="applyFilters()">
+                        🔍 Apply Filters
+                    </button>
+                </div>
+            </div>
+
+            <div class="active-filters" id="activeFilters"></div>
+        </div>
+
         <div id="content" style="display: none;">
+            <div class="pinned-charts" id="pinnedChartsSection" style="display: none;">
+                <div class="pinned-charts-header">
+                    📌 Pinned Charts
+                </div>
+                <div class="charts-grid" id="pinnedChartsGrid"></div>
+            </div>
+
             <div class="metrics-grid">
                 <div class="metric-card">
                     <h3>Total Conversations</h3>
@@ -345,44 +650,84 @@
                 </div>
             </div>
 
-            <div class="charts-grid">
-                <div class="chart-container">
+            <div class="charts-grid" id="mainChartsGrid">
+                <div class="chart-container" data-chart="procedures">
                     <div class="chart-title" data-icon="📊">Procedures Discussed</div>
+                    <div class="chart-actions">
+                        <button class="pin-btn" onclick="togglePin('procedures')">
+                            📌 Pin
+                        </button>
+                    </div>
                     <canvas id="proceduresChart"></canvas>
                 </div>
 
-                <div class="chart-container">
+                <div class="chart-container" data-chart="primaryProcedures">
                     <div class="chart-title" data-icon="🎯">Primary Procedures</div>
+                    <div class="chart-actions">
+                        <button class="pin-btn" onclick="togglePin('primaryProcedures')">
+                            📌 Pin
+                        </button>
+                    </div>
                     <canvas id="primaryProceduresChart"></canvas>
                 </div>
 
-                <div class="chart-container">
+                <div class="chart-container" data-chart="timeline">
                     <div class="chart-title" data-icon="📈">Daily Conversations</div>
+                    <div class="chart-actions">
+                        <button class="pin-btn" onclick="togglePin('timeline')">
+                            📌 Pin
+                        </button>
+                    </div>
                     <canvas id="timelineChart"></canvas>
                 </div>
 
-                <div class="chart-container">
+                <div class="chart-container" data-chart="appointmentTypes">
                     <div class="chart-title" data-icon="📅">Appointment Types</div>
+                    <div class="chart-actions">
+                        <button class="pin-btn" onclick="togglePin('appointmentTypes')">
+                            📌 Pin
+                        </button>
+                    </div>
                     <canvas id="appointmentTypesChart"></canvas>
                 </div>
 
-                <div class="chart-container">
+                <div class="chart-container" data-chart="outcomes">
                     <div class="chart-title" data-icon="🎯">Booking Outcomes</div>
+                    <div class="chart-actions">
+                        <button class="pin-btn" onclick="togglePin('outcomes')">
+                            📌 Pin
+                        </button>
+                    </div>
                     <canvas id="outcomesChart"></canvas>
                 </div>
 
-                <div class="chart-container">
+                <div class="chart-container" data-chart="patientTypes">
                     <div class="chart-title" data-icon="👥">Patient Types</div>
+                    <div class="chart-actions">
+                        <button class="pin-btn" onclick="togglePin('patientTypes')">
+                            📌 Pin
+                        </button>
+                    </div>
                     <canvas id="patientTypesChart"></canvas>
                 </div>
 
-                <div class="chart-container">
+                <div class="chart-container" data-chart="insurance">
                     <div class="chart-title" data-icon="🏥">Insurance Coverage</div>
+                    <div class="chart-actions">
+                        <button class="pin-btn" onclick="togglePin('insurance')">
+                            📌 Pin
+                        </button>
+                    </div>
                     <canvas id="insuranceChart"></canvas>
                 </div>
 
-                <div class="chart-container">
+                <div class="chart-container" data-chart="valueRange">
                     <div class="chart-title" data-icon="💰">Treatment Value Range</div>
+                    <div class="chart-actions">
+                        <button class="pin-btn" onclick="togglePin('valueRange')">
+                            📌 Pin
+                        </button>
+                    </div>
                     <canvas id="valueRangeChart"></canvas>
                 </div>
             </div>
@@ -398,6 +743,10 @@
         var supabase;
         var charts = {};
         var currentClientId = null;
+        var filteredData = [];
+        var originalData = [];
+        var pinnedCharts = new Set();
+        var activeFilters = {};
 
         var colorPalette = {
             primary: '#60a5fa',
@@ -440,6 +789,9 @@
                 }
 
                 supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+                loadPinnedCharts();
+                setupFilterListeners();
                 loadAllMetrics();
             } catch (error) {
                 showError('Configuration Error: ' + error.message);
@@ -452,13 +804,9 @@
                 document.getElementById('error').style.display = 'none';
                 document.getElementById('content').style.display = 'none';
 
-                var thirtyDaysAgo = new Date();
-                thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
-
                 var query = supabase
                     .from('conversation_metrics')
                     .select('*')
-                    .gte('created_at', thirtyDaysAgo.toISOString())
                     .order('created_at', { ascending: true });
 
                 if (currentClientId && currentClientId !== 'default') {
@@ -475,27 +823,271 @@
                         throw new Error('No conversation metrics found for client: ' + currentClientId + '. Start some conversations to see data!');
                     }
 
-                    updateSummaryMetrics(data);
-                    createProceduresChart(data);
-                    createPrimaryProceduresChart(data);
-                    createTimelineChart(data);
-                    createAppointmentTypesChart(data);
-                    createOutcomesChart(data);
-                    createPatientTypesChart(data);
-                    createInsuranceChart(data);
-                    createValueRangeChart(data);
+                    originalData = data;
+                    applyFilters();
 
-                    document.getElementById('loading').style.display = 'none';
-                    document.getElementById('content').style.display = 'block';
-                    document.getElementById('lastUpdated').innerHTML =
-                        '<span class="status-indicator"></span>Last updated: ' +
-                        new Date().toLocaleTimeString();
                 }).catch(function(error) {
                     showError('Error loading metrics: ' + error.message);
                 });
 
             } catch (error) {
                 showError('Error loading metrics: ' + error.message);
+            }
+        }
+
+        function setupFilterListeners() {
+            document.getElementById('timePeriodFilter').addEventListener('change', function() {
+                var customGroups = document.querySelectorAll('#startDateGroup, #endDateGroup');
+                if (this.value === 'custom') {
+                    customGroups.forEach(function(group) { group.style.display = 'block'; });
+                } else {
+                    customGroups.forEach(function(group) { group.style.display = 'none'; });
+                }
+            });
+        }
+
+        function applyFilters() {
+            var timePeriod = document.getElementById('timePeriodFilter').value;
+            var startDate = document.getElementById('startDate').value;
+            var endDate = document.getElementById('endDate').value;
+            var appointmentFilter = document.getElementById('appointmentFilter').value;
+            var patientTypeFilter = document.getElementById('patientTypeFilter').value;
+
+            activeFilters = {};
+            var filteredData = [...originalData];
+            var now = new Date();
+            var cutoffDate = new Date();
+
+            if (timePeriod === 'custom' && startDate && endDate) {
+                var start = new Date(startDate);
+                var end = new Date(endDate);
+                end.setHours(23, 59, 59);
+                filteredData = filteredData.filter(function(item) {
+                    var itemDate = new Date(item.created_at);
+                    return itemDate >= start && itemDate <= end;
+                });
+                activeFilters.dateRange = startDate + ' to ' + endDate;
+            } else if (timePeriod !== 'custom') {
+                cutoffDate.setDate(cutoffDate.getDate() - parseInt(timePeriod));
+                filteredData = filteredData.filter(function(item) {
+                    return new Date(item.created_at) >= cutoffDate;
+                });
+                var periods = {
+                    '7': 'Last 7 Days',
+                    '30': 'Last 30 Days',
+                    '90': 'Last 3 Months',
+                    '365': 'Last Year'
+                };
+                if (periods[timePeriod]) {
+                    activeFilters.timePeriod = periods[timePeriod];
+                }
+            }
+
+            if (appointmentFilter) {
+                if (appointmentFilter === 'booked') {
+                    filteredData = filteredData.filter(function(item) {
+                        return item.appointment_booked;
+                    });
+                    activeFilters.appointments = 'Booked Only';
+                } else if (appointmentFilter === 'not_booked') {
+                    filteredData = filteredData.filter(function(item) {
+                        return !item.appointment_booked;
+                    });
+                    activeFilters.appointments = 'Not Booked';
+                }
+            }
+
+            if (patientTypeFilter) {
+                filteredData = filteredData.filter(function(item) {
+                    return item.patient_type === patientTypeFilter;
+                });
+                var patientTypes = {
+                    'new': 'New Patients',
+                    'existing': 'Existing Patients',
+                    'returning': 'Returning Patients'
+                };
+                if (patientTypes[patientTypeFilter]) {
+                    activeFilters.patientType = patientTypes[patientTypeFilter];
+                }
+            }
+
+            window.filteredData = filteredData;
+            updateActiveFiltersDisplay();
+            updateDashboard(filteredData);
+        }
+
+        function updateActiveFiltersDisplay() {
+            var container = document.getElementById('activeFilters');
+            container.innerHTML = '';
+
+            Object.keys(activeFilters).forEach(function(key) {
+                var tag = document.createElement('div');
+                tag.className = 'filter-tag';
+                tag.innerHTML = activeFilters[key] + ' <span class="remove-filter" onclick="removeFilter(\'' + key + '\')">×</span>';
+                container.appendChild(tag);
+            });
+        }
+
+        function removeFilter(filterKey) {
+            delete activeFilters[filterKey];
+
+            if (filterKey === 'timePeriod') {
+                document.getElementById('timePeriodFilter').value = '30';
+            } else if (filterKey === 'dateRange') {
+                document.getElementById('timePeriodFilter').value = '30';
+                document.getElementById('startDate').value = '';
+                document.getElementById('endDate').value = '';
+                document.querySelector('#startDateGroup').style.display = 'none';
+                document.querySelector('#endDateGroup').style.display = 'none';
+            } else if (filterKey === 'appointments') {
+                document.getElementById('appointmentFilter').value = '';
+            } else if (filterKey === 'patientType') {
+                document.getElementById('patientTypeFilter').value = '';
+            }
+
+            applyFilters();
+        }
+
+        function clearAllFilters() {
+            document.getElementById('timePeriodFilter').value = '30';
+            document.getElementById('startDate').value = '';
+            document.getElementById('endDate').value = '';
+            document.getElementById('appointmentFilter').value = '';
+            document.getElementById('patientTypeFilter').value = '';
+
+            document.querySelector('#startDateGroup').style.display = 'none';
+            document.querySelector('#endDateGroup').style.display = 'none';
+
+            activeFilters = {};
+            updateActiveFiltersDisplay();
+            applyFilters();
+        }
+
+        function updateDashboard(data) {
+            updateSummaryMetrics(data);
+            createProceduresChart(data);
+            createPrimaryProceduresChart(data);
+            createTimelineChart(data);
+            createAppointmentTypesChart(data);
+            createOutcomesChart(data);
+            createPatientTypesChart(data);
+            createInsuranceChart(data);
+            createValueRangeChart(data);
+
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('content').style.display = 'block';
+            document.getElementById('lastUpdated').innerHTML =
+                '<span class="status-indicator"></span>Last updated: ' +
+                new Date().toLocaleTimeString();
+
+            // Update pin buttons after dashboard is loaded
+            updatePinButtons();
+            updatePinnedCharts();
+        }
+
+        function loadPinnedCharts() {
+            var saved = localStorage.getItem('pinnedCharts_' + currentClientId);
+            if (saved) {
+                pinnedCharts = new Set(JSON.parse(saved));
+            }
+        }
+
+        function savePinnedCharts() {
+            localStorage.setItem('pinnedCharts_' + currentClientId, JSON.stringify([...pinnedCharts]));
+        }
+
+        function togglePin(chartId) {
+            if (pinnedCharts.has(chartId)) {
+                pinnedCharts.delete(chartId);
+            } else {
+                pinnedCharts.add(chartId);
+            }
+
+            savePinnedCharts();
+            updatePinButtons();
+            updatePinnedCharts();
+        }
+
+        function updatePinButtons() {
+            // Update buttons in main charts section
+            document.querySelectorAll('#mainChartsGrid .chart-container').forEach(function(container) {
+                var chartId = container.getAttribute('data-chart');
+                var pinBtn = container.querySelector('.pin-btn, .unpin-btn');
+
+                if (pinBtn) {
+                    if (pinnedCharts.has(chartId)) {
+                        pinBtn.innerHTML = '📌 Pinned';
+                        pinBtn.className = 'pin-btn pinned';
+                    } else {
+                        pinBtn.innerHTML = '📌 Pin';
+                        pinBtn.className = 'pin-btn';
+                    }
+                }
+            });
+        }
+
+        function updatePinnedCharts() {
+            var pinnedSection = document.getElementById('pinnedChartsSection');
+            var pinnedGrid = document.getElementById('pinnedChartsGrid');
+
+            if (pinnedCharts.size === 0) {
+                pinnedSection.style.display = 'none';
+                return;
+            }
+
+            pinnedSection.style.display = 'block';
+            pinnedGrid.innerHTML = '';
+
+            pinnedCharts.forEach(function(chartId) {
+                var originalContainer = document.querySelector('#mainChartsGrid [data-chart="' + chartId + '"]');
+                if (originalContainer) {
+                    var clonedContainer = originalContainer.cloneNode(true);
+                    var canvas = clonedContainer.querySelector('canvas');
+                    canvas.id = canvas.id + '_pinned';
+
+                    var pinBtn = clonedContainer.querySelector('.pin-btn, .unpin-btn');
+                    if (pinBtn) {
+                        pinBtn.innerHTML = '📌 Unpin';
+                        pinBtn.className = 'unpin-btn';
+                        pinBtn.setAttribute('onclick', 'togglePin("' + chartId + '")');
+                    }
+
+                    pinnedGrid.appendChild(clonedContainer);
+                    recreateChart(chartId, canvas.id);
+                }
+            });
+        }
+
+        function recreateChart(chartType, canvasId) {
+            var data = window.filteredData || originalData;
+            var ctx = document.getElementById(canvasId);
+            if (!ctx) return;
+
+            switch(chartType) {
+                case 'procedures':
+                    createProceduresChartInCanvas(data, canvasId);
+                    break;
+                case 'primaryProcedures':
+                    createPrimaryProceduresChartInCanvas(data, canvasId);
+                    break;
+                case 'timeline':
+                    createTimelineChartInCanvas(data, canvasId);
+                    break;
+                case 'appointmentTypes':
+                    createAppointmentTypesChartInCanvas(data, canvasId);
+                    break;
+                case 'outcomes':
+                    createOutcomesChartInCanvas(data, canvasId);
+                    break;
+                case 'patientTypes':
+                    createPatientTypesChartInCanvas(data, canvasId);
+                    break;
+                case 'insurance':
+                    createInsuranceChartInCanvas(data, canvasId);
+                    break;
+                case 'valueRange':
+                    createValueRangeChartInCanvas(data, canvasId);
+                    break;
             }
         }
 
@@ -539,9 +1131,8 @@
             window.requestAnimationFrame(step);
         }
 
-        function createProceduresChart(metrics) {
-            var ctx = document.getElementById('proceduresChart').getContext('2d');
-
+        function createProceduresChartInCanvas(metrics, canvasId) {
+            var ctx = document.getElementById(canvasId).getContext('2d');
             var procedures = {};
             metrics.forEach(function(metric) {
                 if (metric.procedures_discussed && metric.procedures_discussed.length > 0) {
@@ -555,9 +1146,9 @@
                 .sort(function(a, b) { return b[1] - a[1]; })
                 .slice(0, 8);
 
-            if (charts.procedures) charts.procedures.destroy();
+            if (charts[canvasId]) charts[canvasId].destroy();
 
-            charts.procedures = new Chart(ctx, {
+            charts[canvasId] = new Chart(ctx, {
                 type: 'bar',
                 data: {
                     labels: sortedProcedures.map(function(item) {
@@ -575,6 +1166,7 @@
                 },
                 options: {
                     responsive: true,
+                    maintainAspectRatio: false,
                     plugins: {
                         legend: { display: false },
                         tooltip: {
@@ -600,9 +1192,12 @@
             });
         }
 
-        function createPrimaryProceduresChart(metrics) {
-            var ctx = document.getElementById('primaryProceduresChart').getContext('2d');
+        function createProceduresChart(metrics) {
+            createProceduresChartInCanvas(metrics, 'proceduresChart');
+        }
 
+        function createPrimaryProceduresChartInCanvas(metrics, canvasId) {
+            var ctx = document.getElementById(canvasId).getContext('2d');
             var primaryProcedures = {};
             metrics.forEach(function(metric) {
                 if (metric.procedure_primary) {
@@ -614,9 +1209,9 @@
                 .sort(function(a, b) { return b[1] - a[1]; })
                 .slice(0, 6);
 
-            if (charts.primaryProcedures) charts.primaryProcedures.destroy();
+            if (charts[canvasId]) charts[canvasId].destroy();
 
-            charts.primaryProcedures = new Chart(ctx, {
+            charts[canvasId] = new Chart(ctx, {
                 type: 'doughnut',
                 data: {
                     labels: sortedPrimary.map(function(item) {
@@ -632,6 +1227,7 @@
                 },
                 options: {
                     responsive: true,
+                    maintainAspectRatio: false,
                     plugins: {
                         legend: {
                             position: 'bottom',
@@ -653,9 +1249,12 @@
             });
         }
 
-        function createTimelineChart(metrics) {
-            var ctx = document.getElementById('timelineChart').getContext('2d');
+        function createPrimaryProceduresChart(metrics) {
+            createPrimaryProceduresChartInCanvas(metrics, 'primaryProceduresChart');
+        }
 
+        function createTimelineChartInCanvas(metrics, canvasId) {
+            var ctx = document.getElementById(canvasId).getContext('2d');
             var dailyData = {};
             metrics.forEach(function(metric) {
                 var date = new Date(metric.created_at).toLocaleDateString();
@@ -673,9 +1272,9 @@
                 });
             }
 
-            if (charts.timeline) charts.timeline.destroy();
+            if (charts[canvasId]) charts[canvasId].destroy();
 
-            charts.timeline = new Chart(ctx, {
+            charts[canvasId] = new Chart(ctx, {
                 type: 'line',
                 data: {
                     labels: last7Days.map(function(d) { return d.date; }),
@@ -696,6 +1295,69 @@
                 },
                 options: {
                     responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            backgroundColor: 'rgba(30, 41, 59, 0.9)',
+                            titleColor: '#f1f5f9',
+                            bodyColor: '#e2e8f0',
+                            borderColor: 'rgba(71, 85, 105, 0.3)',
+                            borderWidth: 1
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: { stepSize: 1, color: '#94a3b8' },
+                            grid: { color: 'rgba(71, 85, 105, 0.2)' }
+                        },
+                        x: {
+                            ticks: { color: '#94a3b8' },
+                            grid: { color: 'rgba(71, 85, 105, 0.2)' }
+                        }
+                    }
+                }
+            });
+        }
+
+        function createTimelineChart(metrics) {
+            createTimelineChartInCanvas(metrics, 'timelineChart');
+        }
+
+        function createAppointmentTypesChartInCanvas(metrics, canvasId) {
+            var ctx = document.getElementById(canvasId).getContext('2d');
+            var appointmentTypes = {};
+            metrics.forEach(function(metric) {
+                if (metric.appointment_type) {
+                    appointmentTypes[metric.appointment_type] = (appointmentTypes[metric.appointment_type] || 0) + 1;
+                }
+            });
+
+            var sortedTypes = Object.entries(appointmentTypes)
+                .sort(function(a, b) { return b[1] - a[1]; });
+
+            if (charts[canvasId]) charts[canvasId].destroy();
+
+            charts[canvasId] = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: sortedTypes.map(function(item) {
+                        return item[0].charAt(0).toUpperCase() + item[0].slice(1);
+                    }),
+                    datasets: [{
+                        label: 'Appointments',
+                        data: sortedTypes.map(function(item) { return item[1]; }),
+                        backgroundColor: colorPalette.secondary,
+                        borderColor: colorPalette.secondary,
+                        borderWidth: 0,
+                        borderRadius: 8,
+                        borderSkipped: false,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
                     plugins: {
                         legend: { display: false },
                         tooltip: {
@@ -722,66 +1384,11 @@
         }
 
         function createAppointmentTypesChart(metrics) {
-            var ctx = document.getElementById('appointmentTypesChart').getContext('2d');
-
-            var appointmentTypes = {};
-            metrics.forEach(function(metric) {
-                if (metric.appointment_type) {
-                    appointmentTypes[metric.appointment_type] = (appointmentTypes[metric.appointment_type] || 0) + 1;
-                }
-            });
-
-            var sortedTypes = Object.entries(appointmentTypes)
-                .sort(function(a, b) { return b[1] - a[1]; });
-
-            if (charts.appointmentTypes) charts.appointmentTypes.destroy();
-
-            charts.appointmentTypes = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: sortedTypes.map(function(item) {
-                        return item[0].charAt(0).toUpperCase() + item[0].slice(1);
-                    }),
-                    datasets: [{
-                        label: 'Appointments',
-                        data: sortedTypes.map(function(item) { return item[1]; }),
-                        backgroundColor: colorPalette.secondary,
-                        borderColor: colorPalette.secondary,
-                        borderWidth: 0,
-                        borderRadius: 8,
-                        borderSkipped: false,
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    plugins: {
-                        legend: { display: false },
-                        tooltip: {
-                            backgroundColor: 'rgba(30, 41, 59, 0.9)',
-                            titleColor: '#f1f5f9',
-                            bodyColor: '#e2e8f0',
-                            borderColor: 'rgba(71, 85, 105, 0.3)',
-                            borderWidth: 1
-                        }
-                    },
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            ticks: { stepSize: 1, color: '#94a3b8' },
-                            grid: { color: 'rgba(71, 85, 105, 0.2)' }
-                        },
-                        x: {
-                            ticks: { color: '#94a3b8' },
-                            grid: { color: 'rgba(71, 85, 105, 0.2)' }
-                        }
-                    }
-                }
-            });
+            createAppointmentTypesChartInCanvas(metrics, 'appointmentTypesChart');
         }
 
-        function createOutcomesChart(metrics) {
-            var ctx = document.getElementById('outcomesChart').getContext('2d');
-
+        function createOutcomesChartInCanvas(metrics, canvasId) {
+            var ctx = document.getElementById(canvasId).getContext('2d');
             var outcomes = {
                 'Booked': metrics.filter(function(m) { return m.appointment_booked; }).length,
                 'Considering': metrics.filter(function(m) { return m.booking_outcome === 'considering'; }).length,
@@ -789,9 +1396,9 @@
                 'No Outcome': metrics.filter(function(m) { return !m.booking_outcome; }).length
             };
 
-            if (charts.outcomes) charts.outcomes.destroy();
+            if (charts[canvasId]) charts[canvasId].destroy();
 
-            charts.outcomes = new Chart(ctx, {
+            charts[canvasId] = new Chart(ctx, {
                 type: 'doughnut',
                 data: {
                     labels: Object.keys(outcomes),
@@ -810,6 +1417,63 @@
                 },
                 options: {
                     responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                color: '#e2e8f0',
+                                usePointStyle: true,
+                                padding: 20
+                            }
+                        },
+                        tooltip: {
+                            backgroundColor: 'rgba(30, 41, 59, 0.9)',
+                            titleColor: '#f1f5f9',
+                            bodyColor: '#e2e8f0',
+                            borderColor: 'rgba(71, 85, 105, 0.3)',
+                            borderWidth: 1
+                        }
+                    }
+                }
+            });
+        }
+
+        function createOutcomesChart(metrics) {
+            createOutcomesChartInCanvas(metrics, 'outcomesChart');
+        }
+
+        function createPatientTypesChartInCanvas(metrics, canvasId) {
+            var ctx = document.getElementById(canvasId).getContext('2d');
+            var types = {
+                'New': metrics.filter(function(m) { return m.patient_type === 'new'; }).length,
+                'Existing': metrics.filter(function(m) { return m.patient_type === 'existing'; }).length,
+                'Returning': metrics.filter(function(m) { return m.patient_type === 'returning'; }).length,
+                'Unknown': metrics.filter(function(m) { return !m.patient_type; }).length
+            };
+
+            if (charts[canvasId]) charts[canvasId].destroy();
+
+            charts[canvasId] = new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: Object.keys(types),
+                    datasets: [{
+                        data: Object.values(types),
+                        backgroundColor: [
+                            colorPalette.accent,
+                            colorPalette.info,
+                            colorPalette.secondary,
+                            'rgba(156, 163, 175, 0.8)'
+                        ],
+                        borderWidth: 3,
+                        borderColor: 'rgba(30, 41, 59, 0.8)',
+                        hoverBorderWidth: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
                     plugins: {
                         legend: {
                             position: 'bottom',
@@ -832,29 +1496,40 @@
         }
 
         function createPatientTypesChart(metrics) {
-            var ctx = document.getElementById('patientTypesChart').getContext('2d');
+            createPatientTypesChartInCanvas(metrics, 'patientTypesChart');
+        }
 
-            var types = {
-                'New': metrics.filter(function(m) { return m.patient_type === 'new'; }).length,
-                'Existing': metrics.filter(function(m) { return m.patient_type === 'existing'; }).length,
-                'Returning': metrics.filter(function(m) { return m.patient_type === 'returning'; }).length,
-                'Unknown': metrics.filter(function(m) { return !m.patient_type; }).length
+        function createInsuranceChartInCanvas(metrics, canvasId) {
+            var ctx = document.getElementById(canvasId).getContext('2d');
+            var insuranceData = {
+                'Insurance Mentioned': metrics.filter(function(m) { return m.insurance_mentioned; }).length,
+                'No Insurance Discussion': metrics.filter(function(m) { return !m.insurance_mentioned; }).length
             };
 
-            if (charts.patientTypes) charts.patientTypes.destroy();
+            var providers = {};
+            metrics.forEach(function(metric) {
+                if (metric.insurance_provider) {
+                    providers[metric.insurance_provider] = (providers[metric.insurance_provider] || 0) + 1;
+                }
+            });
 
-            charts.patientTypes = new Chart(ctx, {
+            var combinedData = {};
+            Object.keys(insuranceData).forEach(function(key) {
+                combinedData[key] = insuranceData[key];
+            });
+            Object.keys(providers).forEach(function(provider) {
+                combinedData[provider] = providers[provider];
+            });
+
+            if (charts[canvasId]) charts[canvasId].destroy();
+
+            charts[canvasId] = new Chart(ctx, {
                 type: 'pie',
                 data: {
-                    labels: Object.keys(types),
+                    labels: Object.keys(combinedData),
                     datasets: [{
-                        data: Object.values(types),
-                        backgroundColor: [
-                            colorPalette.accent,
-                            colorPalette.info,
-                            colorPalette.secondary,
-                            'rgba(156, 163, 175, 0.8)'
-                        ],
+                        data: Object.values(combinedData),
+                        backgroundColor: colorPalette.gradients.slice(0, Object.keys(combinedData).length),
                         borderWidth: 3,
                         borderColor: 'rgba(30, 41, 59, 0.8)',
                         hoverBorderWidth: 4
@@ -862,6 +1537,7 @@
                 },
                 options: {
                     responsive: true,
+                    maintainAspectRatio: false,
                     plugins: {
                         legend: {
                             position: 'bottom',
@@ -884,68 +1560,11 @@
         }
 
         function createInsuranceChart(metrics) {
-            var ctx = document.getElementById('insuranceChart').getContext('2d');
-
-            var insuranceData = {
-                'Insurance Mentioned': metrics.filter(function(m) { return m.insurance_mentioned; }).length,
-                'No Insurance Discussion': metrics.filter(function(m) { return !m.insurance_mentioned; }).length
-            };
-
-            var providers = {};
-            metrics.forEach(function(metric) {
-                if (metric.insurance_provider) {
-                    providers[metric.insurance_provider] = (providers[metric.insurance_provider] || 0) + 1;
-                }
-            });
-
-            var combinedData = {};
-            Object.keys(insuranceData).forEach(function(key) {
-                combinedData[key] = insuranceData[key];
-            });
-            Object.keys(providers).forEach(function(provider) {
-                combinedData[provider] = providers[provider];
-            });
-
-            if (charts.insurance) charts.insurance.destroy();
-
-            charts.insurance = new Chart(ctx, {
-                type: 'pie',
-                data: {
-                    labels: Object.keys(combinedData),
-                    datasets: [{
-                        data: Object.values(combinedData),
-                        backgroundColor: colorPalette.gradients.slice(0, Object.keys(combinedData).length),
-                        borderWidth: 3,
-                        borderColor: 'rgba(30, 41, 59, 0.8)',
-                        hoverBorderWidth: 4
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    plugins: {
-                        legend: {
-                            position: 'bottom',
-                            labels: {
-                                color: '#e2e8f0',
-                                usePointStyle: true,
-                                padding: 20
-                            }
-                        },
-                        tooltip: {
-                            backgroundColor: 'rgba(30, 41, 59, 0.9)',
-                            titleColor: '#f1f5f9',
-                            bodyColor: '#e2e8f0',
-                            borderColor: 'rgba(71, 85, 105, 0.3)',
-                            borderWidth: 1
-                        }
-                    }
-                }
-            });
+            createInsuranceChartInCanvas(metrics, 'insuranceChart');
         }
 
-        function createValueRangeChart(metrics) {
-            var ctx = document.getElementById('valueRangeChart').getContext('2d');
-
+        function createValueRangeChartInCanvas(metrics, canvasId) {
+            var ctx = document.getElementById(canvasId).getContext('2d');
             var valueRanges = {
                 '$0 - $200': 0,
                 '$201 - $500': 0,
@@ -972,9 +1591,9 @@
                 }
             });
 
-            if (charts.valueRange) charts.valueRange.destroy();
+            if (charts[canvasId]) charts[canvasId].destroy();
 
-            charts.valueRange = new Chart(ctx, {
+            charts[canvasId] = new Chart(ctx, {
                 type: 'bar',
                 data: {
                     labels: Object.keys(valueRanges),
@@ -990,6 +1609,7 @@
                 },
                 options: {
                     responsive: true,
+                    maintainAspectRatio: false,
                     plugins: {
                         legend: { display: false },
                         tooltip: {
@@ -1015,6 +1635,10 @@
             });
         }
 
+        function createValueRangeChart(metrics) {
+            createValueRangeChartInCanvas(metrics, 'valueRangeChart');
+        }
+
         function showError(message) {
             document.getElementById('loading').style.display = 'none';
             document.getElementById('content').style.display = 'none';
@@ -1035,8 +1659,6 @@
             }, 2000);
         }, 5 * 60 * 1000);
 
-        document.addEventListener('DOMContentLoaded', init);
-
         document.addEventListener('DOMContentLoaded', function() {
             document.documentElement.style.scrollBehavior = 'smooth';
 
@@ -1047,6 +1669,8 @@
                     }
                 });
             });
+
+            init();
         });
     </script>
 </body>
